@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0a;
+  --color-surface: #0d0d0d;
+  --color-border: #1a1a1a;
+  --color-border-active: #333;
+  --color-muted: #555;
+  --color-dim: #444;
+  --color-fg: #b0b0b0;
+  --color-bright: #e0e0e0;
+  --color-accent: #33ff33;
+  --color-accent-dim: #1a661a;
+  --color-warn: #ffaa00;
+  --color-danger: #ff3333;
+  --color-info: #00aaff;
+  --color-purple: #aa66ff;
+  --color-cyan: #00cccc;
+
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', 'IBM Plex Mono', monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-mono);
+    background-color: #000;
+    color: var(--color-fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1a1a1a;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #333;
+  }
+  ::selection {
+    background: rgba(51, 255, 51, 0.2);
+    color: var(--color-bright);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .terminal {
+    background: #000;
+    border: 1px solid #1a1a1a;
+  }
+  .terminal-header {
+    background: #080808;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  .terminal-card {
+    background: #050505;
+    border: 1px solid #1a1a1a;
+    transition: border-color 0.2s ease;
+  }
+  .terminal-card:hover {
+    border-color: #2a2a2a;
+  }
+  .text-glow {
+    text-shadow: 0 0 8px rgba(51, 255, 51, 0.3);
+  }
+  .border-glow {
+    box-shadow: 0 0 4px rgba(51, 255, 51, 0.1);
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}

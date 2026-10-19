@@ -1,0 +1,6 @@
+node_modules
+dist
+.DS_Store
+*.log
+public/payslips.csv
+public/Payslips_Consolidated.csv
